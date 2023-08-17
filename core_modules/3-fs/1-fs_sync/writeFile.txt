@@ -1,0 +1,3 @@
+The result : This sentence from "First.txt"This sentence from "Second.txt"
+The result : This sentence from "First.txt"This sentence from "Second.txt"
+The result : This sentence from "First.txt"This sentence from "Second.txt"
