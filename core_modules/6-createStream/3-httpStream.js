@@ -1,22 +1,12 @@
 const {createReadStream, readFile} = require("fs");
 const http = require("http");
 
-// const server = http.createServer((req,res) => {
-//     const stream = createReadStream("./hugeFile.txt", "utf-8", { highWaterMark: 80000 })
-//     stream.on("open",() => {
-//         stream.pipe(res);
-//     });
-// });
-
 const server = http.createServer((req,res) => {
-    const readContent = readFile("./hugeFile.txt","utf-8",(err, data) => {
-        if(err) {
-            console.log(err.message);
-        }
-        console.log(data);
+    const stream = createReadStream("./hugeFile.txt", "utf-8", { highWaterMark: 80000 })
+    stream.on("open",() => {
+        stream.pipe(res);
     });
-    res.end(readContent);
-})
+});
 
 
 server.listen(5000, () =>{
