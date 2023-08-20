@@ -11,7 +11,9 @@ const server = http.createServer((req,res) => {
 
 server.listen(5000, () =>{
     console.log(`server is running in : http://localhost:5000`);
-    server.on("error" ,(err) => {
-        console.log(err.message);
-    })
+   
+})
+
+server.on("error" ,(err) => {
+    console.log(err.message);
 })
